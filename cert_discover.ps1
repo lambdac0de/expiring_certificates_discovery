@@ -5,7 +5,7 @@
     Version: 1.0
 #>
 
-################################################################################################# VARIABLE Definition
+############################################## VARIABLE Definition ###################################################
 # The line below is no longer needed. The script was created using PSv2, where $PSScriptRoot didn't exist yet
 # $scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
 
@@ -34,9 +34,9 @@ $headingstyle = $headingstyle + "TH{border-width: 1px;padding-left: 10px;padding
 $headingstyle = $headingstyle + "TD{border-width: 1px;padding-left: 10px;padding-right: 10px;border-style: solid;border-color: black;background-color:white;white-space: pre-wrap}"
 $headingstyle = $headingstyle + "Table.courier TD{border-width: 1px;padding-left: 10px;padding-right: 10px;border-style: solid;border-color: black;background-color:white;white-space: pre-wrap; font-family: courier new}"
 $headingstyle = $headingstyle + "</style>"
-#################################################################################################
+###################################################################################################################
 
-################################################################################################# HELPER functions definition
+############################################## HELPER functions definition #############################################
 # Read config.ini and set defined variables
 function Set-Config {
     $configFile = "$PSScriptRoot\config.ini"
@@ -821,9 +821,9 @@ function Send-Report {
     $SMTPmessage.Dispose()
 
 }
-#################################################################################################
+########################################################################################################################
 
-################################################################################################# 3RD PARTY helper functions
+############################################## H3RD PARTY helper functions #############################################
 # The following functions were obtained from: http://www.indented.co.uk/2010/01/23/powershell-subnet-math/
 # Sadly the site is already down :( These functions are used to obtain the network range of the host executing this script
 function Get-NetworkRange ([String]$IP, [String]$Mask) {
@@ -934,9 +934,9 @@ function ConvertTo-DecimalIP {
     return [UInt32]$DecimalIP
   }
 }
-#################################################################################################
+########################################################################################################################
 
-################################################################################################# MAIN PROGRAM
+##################################################### MAIN PROGRAM #####################################################
 # Get config
 Set-Config
 
@@ -1069,4 +1069,4 @@ catch [Exception] {
     Out-Message -Yellow "Please do manual cleanup as needed"
     Out-Message -Silent "[Return Message]: $_"
 }
-################################################################################################# END OF PROGRAM
+##################################################### END OF PROGRAM ###################################################
